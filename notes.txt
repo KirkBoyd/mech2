@@ -1,0 +1,38 @@
+##########
+##GitHub##
+##########
+## Set up new repo:
+git init
+git remote add origin https://github.com/$REPO_NAME$
+git config --global credential.helper store
+git config --global user.email "kirkland.boyd@trincoll.edu"
+git config --global user.name "KirkBoyd"
+git pull origin master #i think#
+git add -A
+git commit -m "add remote"
+# Enter Username & Access Token #
+git config --global credential.helper store
+
+
+########
+#Config#
+########
+## Aliases
+alias cdx='cd ~/Documents/Mech2'
+alias gaa='git add -A'
+alias gpull='git pull origin master'
+alias gpush='git push origin master'
+alias laa='ls -la'
+
+## Add to file by:
+sudo nano ~/.bashrc
+## implement chances by:
+source ~/.bashrc
+
+##Flip screen by
+sudo nano /boot/config.txt
+## add this to top:
+lcd_rotate=2
+## then reboot
+## if this does not work use:
+# Screen Configuration -> Right Click Screen -> Flip
