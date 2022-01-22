@@ -1,0 +1,268 @@
+  copying numpy/f2py/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_parameter.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_return_integer.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_return_complex.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_callback.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_module_doc.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_compile_function.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/util.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_quoted_character.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_regression.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_kind.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_assumed_shape.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_size.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_semicolon_split.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_return_real.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_mixed.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_abstract_interface.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_return_character.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_common.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_crackfortran.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_array_from_pyobj.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  copying numpy/f2py/tests/test_string.py -> build/lib.linux-armv7l-3.7/numpy/f2py/tests
+  creating build/lib.linux-armv7l-3.7/numpy/fft
+  copying numpy/fft/__init__.py -> build/lib.linux-armv7l-3.7/numpy/fft
+  copying numpy/fft/setup.py -> build/lib.linux-armv7l-3.7/numpy/fft
+  copying numpy/fft/helper.py -> build/lib.linux-armv7l-3.7/numpy/fft
+  copying numpy/fft/_pocketfft.py -> build/lib.linux-armv7l-3.7/numpy/fft
+  creating build/lib.linux-armv7l-3.7/numpy/fft/tests
+  copying numpy/fft/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/fft/tests
+  copying numpy/fft/tests/test_helper.py -> build/lib.linux-armv7l-3.7/numpy/fft/tests
+  copying numpy/fft/tests/test_pocketfft.py -> build/lib.linux-armv7l-3.7/numpy/fft/tests
+  creating build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/utils.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/arrayterator.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/npyio.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/polynomial.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/__init__.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/function_base.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/nanfunctions.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/ufunclike.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/_datasource.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/setup.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/histograms.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/mixins.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/_iotools.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/_version.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/twodim_base.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/arraysetops.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/format.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/arraypad.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/shape_base.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/scimath.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/user_array.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/stride_tricks.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/index_tricks.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/type_check.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  copying numpy/lib/recfunctions.py -> build/lib.linux-armv7l-3.7/numpy/lib
+  creating build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_recfunctions.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_stride_tricks.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_io.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_shape_base.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test__version.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_mixins.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_function_base.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test__iotools.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_arraypad.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_twodim_base.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_polynomial.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test__datasource.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_regression.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_histograms.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_type_check.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_financial_expired.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_ufunclike.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_utils.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_packbits.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_arrayterator.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_index_tricks.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_nanfunctions.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_format.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  copying numpy/lib/tests/test_arraysetops.py -> build/lib.linux-armv7l-3.7/numpy/lib/tests
+  creating build/lib.linux-armv7l-3.7/numpy/linalg
+  copying numpy/linalg/linalg.py -> build/lib.linux-armv7l-3.7/numpy/linalg
+  copying numpy/linalg/__init__.py -> build/lib.linux-armv7l-3.7/numpy/linalg
+  copying numpy/linalg/setup.py -> build/lib.linux-armv7l-3.7/numpy/linalg
+  creating build/lib.linux-armv7l-3.7/numpy/linalg/tests
+  copying numpy/linalg/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/linalg/tests
+  copying numpy/linalg/tests/test_deprecations.py -> build/lib.linux-armv7l-3.7/numpy/linalg/tests
+  copying numpy/linalg/tests/test_regression.py -> build/lib.linux-armv7l-3.7/numpy/linalg/tests
+  copying numpy/linalg/tests/test_linalg.py -> build/lib.linux-armv7l-3.7/numpy/linalg/tests
+  copying numpy/linalg/tests/test_build.py -> build/lib.linux-armv7l-3.7/numpy/linalg/tests
+  creating build/lib.linux-armv7l-3.7/numpy/ma
+  copying numpy/ma/mrecords.py -> build/lib.linux-armv7l-3.7/numpy/ma
+  copying numpy/ma/__init__.py -> build/lib.linux-armv7l-3.7/numpy/ma
+  copying numpy/ma/core.py -> build/lib.linux-armv7l-3.7/numpy/ma
+  copying numpy/ma/setup.py -> build/lib.linux-armv7l-3.7/numpy/ma
+  copying numpy/ma/testutils.py -> build/lib.linux-armv7l-3.7/numpy/ma
+  copying numpy/ma/timer_comparison.py -> build/lib.linux-armv7l-3.7/numpy/ma
+  copying numpy/ma/extras.py -> build/lib.linux-armv7l-3.7/numpy/ma
+  copying numpy/ma/bench.py -> build/lib.linux-armv7l-3.7/numpy/ma
+  creating build/lib.linux-armv7l-3.7/numpy/ma/tests
+  copying numpy/ma/tests/test_subclassing.py -> build/lib.linux-armv7l-3.7/numpy/ma/tests
+  copying numpy/ma/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/ma/tests
+  copying numpy/ma/tests/test_core.py -> build/lib.linux-armv7l-3.7/numpy/ma/tests
+  copying numpy/ma/tests/test_deprecations.py -> build/lib.linux-armv7l-3.7/numpy/ma/tests
+  copying numpy/ma/tests/test_regression.py -> build/lib.linux-armv7l-3.7/numpy/ma/tests
+  copying numpy/ma/tests/test_extras.py -> build/lib.linux-armv7l-3.7/numpy/ma/tests
+  copying numpy/ma/tests/test_old_ma.py -> build/lib.linux-armv7l-3.7/numpy/ma/tests
+  copying numpy/ma/tests/test_mrecords.py -> build/lib.linux-armv7l-3.7/numpy/ma/tests
+  creating build/lib.linux-armv7l-3.7/numpy/matrixlib
+  copying numpy/matrixlib/__init__.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib
+  copying numpy/matrixlib/setup.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib
+  copying numpy/matrixlib/defmatrix.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib
+  creating build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  copying numpy/matrixlib/tests/test_numeric.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  copying numpy/matrixlib/tests/test_matrix_linalg.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  copying numpy/matrixlib/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  copying numpy/matrixlib/tests/test_interaction.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  copying numpy/matrixlib/tests/test_regression.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  copying numpy/matrixlib/tests/test_defmatrix.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  copying numpy/matrixlib/tests/test_masked_matrix.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  copying numpy/matrixlib/tests/test_multiarray.py -> build/lib.linux-armv7l-3.7/numpy/matrixlib/tests
+  creating build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/polynomial.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/__init__.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/_polybase.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/setup.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/laguerre.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/legendre.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/polyutils.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/hermite_e.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/chebyshev.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  copying numpy/polynomial/hermite.py -> build/lib.linux-armv7l-3.7/numpy/polynomial
+  creating build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_classes.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_laguerre.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_hermite_e.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_printing.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_polynomial.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_legendre.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_chebyshev.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_hermite.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  copying numpy/polynomial/tests/test_polyutils.py -> build/lib.linux-armv7l-3.7/numpy/polynomial/tests
+  creating build/lib.linux-armv7l-3.7/numpy/random
+  copying numpy/random/__init__.py -> build/lib.linux-armv7l-3.7/numpy/random
+  copying numpy/random/setup.py -> build/lib.linux-armv7l-3.7/numpy/random
+  copying numpy/random/_pickle.py -> build/lib.linux-armv7l-3.7/numpy/random
+  creating build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_randomstate.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_random.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_extending.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_smoke.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_generator_mt19937_regressions.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_regression.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_seed_sequence.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_randomstate_regression.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_generator_mt19937.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  copying numpy/random/tests/test_direct.py -> build/lib.linux-armv7l-3.7/numpy/random/tests
+  creating build/lib.linux-armv7l-3.7/numpy/testing
+  copying numpy/testing/utils.py -> build/lib.linux-armv7l-3.7/numpy/testing
+  copying numpy/testing/__init__.py -> build/lib.linux-armv7l-3.7/numpy/testing
+  copying numpy/testing/setup.py -> build/lib.linux-armv7l-3.7/numpy/testing
+  copying numpy/testing/print_coercion_tables.py -> build/lib.linux-armv7l-3.7/numpy/testing
+  creating build/lib.linux-armv7l-3.7/numpy/testing/_private
+  copying numpy/testing/_private/nosetester.py -> build/lib.linux-armv7l-3.7/numpy/testing/_private
+  copying numpy/testing/_private/utils.py -> build/lib.linux-armv7l-3.7/numpy/testing/_private
+  copying numpy/testing/_private/__init__.py -> build/lib.linux-armv7l-3.7/numpy/testing/_private
+  copying numpy/testing/_private/decorators.py -> build/lib.linux-armv7l-3.7/numpy/testing/_private
+  copying numpy/testing/_private/parameterized.py -> build/lib.linux-armv7l-3.7/numpy/testing/_private
+  copying numpy/testing/_private/noseclasses.py -> build/lib.linux-armv7l-3.7/numpy/testing/_private
+  creating build/lib.linux-armv7l-3.7/numpy/testing/tests
+  copying numpy/testing/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/testing/tests
+  copying numpy/testing/tests/test_doctesting.py -> build/lib.linux-armv7l-3.7/numpy/testing/tests
+  copying numpy/testing/tests/test_utils.py -> build/lib.linux-armv7l-3.7/numpy/testing/tests
+  creating build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_array_like.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/__init__.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_shape.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_scalars.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_callable.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/setup.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_extended_precision.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/mypy_plugin.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_add_docstring.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_generic_alias.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_nbit.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_dtype_like.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  copying numpy/typing/_char_codes.py -> build/lib.linux-armv7l-3.7/numpy/typing
+  creating build/lib.linux-armv7l-3.7/numpy/typing/tests
+  copying numpy/typing/tests/test_typing.py -> build/lib.linux-armv7l-3.7/numpy/typing/tests
+  copying numpy/typing/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/typing/tests
+  copying numpy/typing/tests/test_generic_alias.py -> build/lib.linux-armv7l-3.7/numpy/typing/tests
+  copying numpy/typing/tests/test_typing_extensions.py -> build/lib.linux-armv7l-3.7/numpy/typing/tests
+  copying numpy/typing/tests/test_isfile.py -> build/lib.linux-armv7l-3.7/numpy/typing/tests
+  copying numpy/typing/tests/test_runtime.py -> build/lib.linux-armv7l-3.7/numpy/typing/tests
+  creating build/lib.linux-armv7l-3.7/numpy/tests
+  copying numpy/tests/__init__.py -> build/lib.linux-armv7l-3.7/numpy/tests
+  copying numpy/tests/test_matlib.py -> build/lib.linux-armv7l-3.7/numpy/tests
+  copying numpy/tests/test_reloading.py -> build/lib.linux-armv7l-3.7/numpy/tests
+  copying numpy/tests/test_public_api.py -> build/lib.linux-armv7l-3.7/numpy/tests
+  copying numpy/tests/test_ctypeslib.py -> build/lib.linux-armv7l-3.7/numpy/tests
+  copying numpy/tests/test_numpy_version.py -> build/lib.linux-armv7l-3.7/numpy/tests
+  copying numpy/tests/test_warnings.py -> build/lib.linux-armv7l-3.7/numpy/tests
+  copying numpy/tests/test_scripts.py -> build/lib.linux-armv7l-3.7/numpy/tests
+  UPDATING build/lib.linux-armv7l-3.7/numpy/_version.py
+  set build/lib.linux-armv7l-3.7/numpy/_version.py to '1.21.5'
+  running build_clib
+  creating /tmp/tmprhouzqwl/tmp
+  creating /tmp/tmprhouzqwl/tmp/pip-install-xzgbxbg0
+  creating /tmp/tmprhouzqwl/tmp/pip-install-xzgbxbg0/numpy_0b7d0bd2baa54ed6af557e5316d83392
+  creating /tmp/tmprhouzqwl/tmp/pip-install-xzgbxbg0/numpy_0b7d0bd2baa54ed6af557e5316d83392/numpy
+  creating /tmp/tmprhouzqwl/tmp/pip-install-xzgbxbg0/numpy_0b7d0bd2baa54ed6af557e5316d83392/numpy/distutils
+  creating /tmp/tmprhouzqwl/tmp/pip-install-xzgbxbg0/numpy_0b7d0bd2baa54ed6af557e5316d83392/numpy/distutils/checks
+  CCompilerOpt.generate_dispatch_header[2283] : dispatch header dir build/src.linux-armv7l-3.7/numpy/distutils/include does not exist, creating it
+  creating build/temp.linux-armv7l-3.7
+  creating build/temp.linux-armv7l-3.7/numpy
+  creating build/temp.linux-armv7l-3.7/numpy/core
+  creating build/temp.linux-armv7l-3.7/numpy/core/src
+  creating build/temp.linux-armv7l-3.7/numpy/core/src/npymath
+  creating build/temp.linux-armv7l-3.7/build
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npymath
+  creating build/temp.linux-armv7l-3.7/numpy/random
+  creating build/temp.linux-armv7l-3.7/numpy/random/src
+  creating build/temp.linux-armv7l-3.7/numpy/random/src/distributions
+  running build_ext
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/multiarray
+  creating build/temp.linux-armv7l-3.7/numpy/core/src/common
+  numpy/core/src/multiarray/_multiarray_tests.c.src: In function ‘array_solve_diophantine’:
+  numpy/core/src/multiarray/_multiarray_tests.c.src:1353:29: warning: comparison of integer expressions of different signedness: ‘Py_ssize_t’ {aka ‘int’} and ‘unsigned int’ [-Wsign-compare]
+       if (PyTuple_GET_SIZE(U) != nterms) {
+                               ^~
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath
+  creating build/temp.linux-armv7l-3.7/numpy/core/src/multiarray
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npysort
+  creating build/temp.linux-armv7l-3.7/numpy/core/src/umath
+  creating build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/common
+  during RTL pass: expand
+  numpy/core/src/umath/loops_trigonometric.dispatch.c.src: In function ‘FLOAT_sin_NEON_VFPV4’:
+  numpy/core/src/umath/loops_trigonometric.dispatch.c.src:202:20: internal compiler error: in convert_move, at expr.c:218
+   NPY_NO_EXPORT void NPY_CPU_DISPATCH_CURFX(FLOAT_@func@)
+                      ^
+  0xb6aaf717 __libc_start_main
+  	/home/pi/dev/glibc-buster/csu/libc-start.c:308
+  Please submit a full bug report,
+  with preprocessed source if appropriate.
+  Please include the complete backtrace with any bug report.
+  See <file:///usr/share/doc/gcc-8/README.Bugs> for instructions.
+  lto-wrapper: fatal error: arm-linux-gnueabihf-gcc returned 1 exit status
+  compilation terminated.
+  /usr/bin/ld: error: lto-wrapper failed
+  collect2: error: ld returned 1 exit status
+  Running from numpy source directory.
+  Warning: attempted relative import with no known parent package
+  /tmp/pip-build-env-v29ug87p/overlay/lib/python3.7/site-packages/setuptools/_distutils/dist.py:275: UserWarning: Unknown distribution option: 'define_macros'
+    warnings.warn(msg)
+  error: Command "arm-linux-gnueabihf-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-z,relro build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops_unary_fp.dispatch.neon.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops_arithmetic.dispatch.neon.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops_unary_fp.dispatch.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops_arithm_fp.dispatch.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops_arithmetic.dispatch.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops_trigonometric.dispatch.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops_exponent_log.dispatch.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops_trigonometric.dispatch.neon_vfpv4.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/abstractdtypes.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/alloc.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/arrayobject.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/multiarray/arraytypes.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/array_coercion.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/array_method.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/array_assign_scalar.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/array_assign_array.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/arrayfunction_override.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/buffer.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/calculation.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/compiled_base.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/common.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/common_dtype.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/convert.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/convert_datatype.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/conversion_utils.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/ctors.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/datetime.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/datetime_strings.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/datetime_busday.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/datetime_busdaycal.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/descriptor.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/dtypemeta.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/dragon4.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/dtype_transfer.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/multiarray/einsum.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/multiarray/einsum_sumprod.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/flagsobject.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/getset.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/hashdescr.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/item_selection.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/iterators.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/legacy_dtype_implementation.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/multiarray/lowlevel_strided_loops.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/mapping.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/methods.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/multiarraymodule.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/multiarray/nditer_templ.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/nditer_api.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/nditer_constr.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/nditer_pywrap.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/number.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/refcount.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/sequence.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/shape.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/scalarapi.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/multiarray/scalartypes.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/strfuncs.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/temp_elide.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/typeinfo.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/usertypes.o build/temp.linux-armv7l-3.7/numpy/core/src/multiarray/vdot.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npysort/quicksort.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npysort/mergesort.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npysort/timsort.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npysort/heapsort.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npysort/radixsort.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npysort/selection.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/npysort/binsearch.o build/temp.linux-armv7l-3.7/numpy/core/src/umath/umathmodule.o build/temp.linux-armv7l-3.7/numpy/core/src/umath/reduction.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/loops.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/matmul.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/clip.o build/temp.linux-armv7l-3.7/numpy/core/src/umath/ufunc_object.o build/temp.linux-armv7l-3.7/numpy/core/src/umath/extobj.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/umath/scalarmath.o build/temp.linux-armv7l-3.7/numpy/core/src/umath/ufunc_type_resolution.o build/temp.linux-armv7l-3.7/numpy/core/src/umath/override.o build/temp.linux-armv7l-3.7/numpy/core/src/common/array_assign.o build/temp.linux-armv7l-3.7/numpy/core/src/common/mem_overlap.o build/temp.linux-armv7l-3.7/numpy/core/src/common/npy_argparse.o build/temp.linux-armv7l-3.7/numpy/core/src/common/npy_longdouble.o build/temp.linux-armv7l-3.7/numpy/core/src/common/ucsnarrow.o build/temp.linux-armv7l-3.7/numpy/core/src/common/ufunc_override.o build/temp.linux-armv7l-3.7/numpy/core/src/common/numpyos.o build/temp.linux-armv7l-3.7/build/src.linux-armv7l-3.7/numpy/core/src/common/npy_cpu_features.o build/temp.linux-armv7l-3.7/numpy/core/src/common/cblasfuncs.o build/temp.linux-armv7l-3.7/numpy/core/src/common/python_xerbla.o -L/usr/lib/arm-linux-gnueabihf -L/usr/lib -Lbuild/temp.linux-armv7l-3.7 -lnpymath -lopenblas -lopenblas -lm -o build/lib.linux-armv7l-3.7/numpy/core/_multiarray_umath.cpython-37m-arm-linux-gnueabihf.so" failed with exit status 1
+  ----------------------------------------
+  ERROR: Failed building wheel for numpy
+Failed to build numpy
+ERROR: Could not build wheels for numpy, which is required to install pyproject.toml-based projects

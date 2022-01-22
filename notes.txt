@@ -18,11 +18,12 @@ git config --global credential.helper store
 #Config#
 ########
 ## Aliases
-alias cdx='cd ~/Documents/Mech2'
-alias gaa='git add -A'
-alias gpull='git pull origin master'
-alias gpush='git push origin master'
-alias laa='ls -la'
+    alias cdx='cd ~/Documents/Mech2'
+    alias gaa='git add -A'
+    alias gpull='git pull origin master'
+    alias gpush='git push origin master'
+    alias laa='ls -la'
+    alias srcb='source ~/.bashrc'
 
 ## Add to file by:
 sudo nano ~/.bashrc
