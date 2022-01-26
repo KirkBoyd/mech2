@@ -6,12 +6,12 @@ import math
 
 # picamera setup
 camera = PiCamera()
-camera.resolution = (320, 240)
+#camera.resolution = (320, 240)
 camera.framerate = 30
-camera.brightness = 65
+#camera.brightness = 65
 
 
-raw_capture = PiRGBArray(camera, size=(320,240))
+raw_capture = PiRGBArray(camera)
 #cap = cv2.VideoCapture(0)
 
 for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port=True):
