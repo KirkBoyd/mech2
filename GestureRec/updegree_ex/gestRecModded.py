@@ -3,26 +3,33 @@ from picamera import PiCamera
 import cv2
 import numpy as np
 import math
+from gpiozero import LED
 
-start_rectx = 300
+ledR = LED(16)
+ledY = LED(21)
+ledG = LED(26)
+
+ledR.off()
+ledY.off()
+ledG.off()
+
+start_rectx = 400
 start_recty = 300
 start_rect = (start_rectx,start_recty)
-end_rectx = 100
+end_rectx = 200
 end_recty = 100
 end_rect = (end_rectx,end_recty)
 
 # picamera setup
 camera = PiCamera()
-camera.resolution = (320, 240)
+camera.resolution = (640, 480)
 camera.framerate = 30
 #camera.brightness = 65
 
-
-raw_capture = PiRGBArray(camera, size=(320,240))
+raw_capture = PiRGBArray(camera, size=(640,480))
 #cap = cv2.VideoCapture(0)
 
 for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port=True):
-
 # while(cap.isOpened()):
     # read image
     # ret, img = cap.read()
@@ -35,7 +42,7 @@ for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port
       # continue
     # get hand data from the rectangle sub window on the screen
     cv2.rectangle(img, start_rect, end_rect, (0,255,0),0)
-    crop_img = img[end_rectx:start_rectx, end_recty:start_recty]
+    crop_img = img[end_recty:start_recty, end_rectx:start_rectx]
 
     # convert to grayscale
     grey = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY)
@@ -48,7 +55,7 @@ for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port
 
     # thresholdin: Otsu's Binarization method
     _, thresh1 = cv2.threshold(blurred, 100, 255,
-                               cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
+                               cv2.THRESH_BINARY+cv2.THRESH_OTSU)
 
     # show thresholded image
     cv2.imshow('Thresholded', thresh1)
@@ -116,18 +123,36 @@ for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port
 
     # define actions required
     if count_defects == 1:
-        cv2.putText(img,"1 finger", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255))
+        ledR.on()
+        ledY.off()
+        ledG.off()
+        cv2.putText(img,"2 fingers", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255))
     elif count_defects == 2:
-        str = "2 fingers"
-        cv2.putText(img, str,(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
+        ledY.on()
+        ledR.off()
+        ledG.off()
+        cv2.putText(img, "3 fingers",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
     elif count_defects == 3:
-        cv2.putText(img,"3 fingers",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
-    elif count_defects == 4:
+        ledG.on()
+        ledR.off()
+        ledY.off()
         cv2.putText(img,"4 fingers",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
+    elif count_defects == 4:
+        ledG.off()
+        ledR.off()
+        ledY.off()
+        cv2.putText(img,"5 fingers",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
     elif count_defects == 5:
-        cv2.putText(img,"Entire hand",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
+        continue
+        ledG.off()
+        ledR.off()
+        ledY.off()
+        #cv2.putText(img,"Entire hand",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
     else:
         cv2.putText(img,"No hand",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
+        ledG.off()
+        ledR.off()
+        ledY.off()
 
     # show appropriate images in windows
     cv2.imshow('Gesture', img)
