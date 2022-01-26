@@ -116,16 +116,18 @@ for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port
 
     # define actions required
     if count_defects == 1:
-        cv2.putText(img,"1 finger", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
+        cv2.putText(img,"1 finger", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255,255,255))
     elif count_defects == 2:
         str = "2 fingers"
-        cv2.putText(img, str, (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
+        cv2.putText(img, str,(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
     elif count_defects == 3:
-        cv2.putText(img,"3 fingers", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
+        cv2.putText(img,"3 fingers",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
     elif count_defects == 4:
-        cv2.putText(img,"4 fingers", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
+        cv2.putText(img,"4 fingers",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
+    elif count_defects == 5:
+        cv2.putText(img,"Entire hand",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
     else:
-        cv2.putText(img,"Entire hand", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
+        cv2.putText(img,"No hand",(5,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255))
 
     # show appropriate images in windows
     cv2.imshow('Gesture', img)
