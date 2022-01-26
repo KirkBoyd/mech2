@@ -4,14 +4,21 @@ import cv2
 import numpy as np
 import math
 
+start_rectx = 300
+start_recty = 300
+start_rect = (start_rectx,start_recty)
+end_rectx = 100
+end_recty = 100
+end_rect = (end_rectx,end_recty)
+
 # picamera setup
 camera = PiCamera()
-#camera.resolution = (320, 240)
+camera.resolution = (320, 240)
 camera.framerate = 30
 #camera.brightness = 65
 
 
-raw_capture = PiRGBArray(camera)
+raw_capture = PiRGBArray(camera, size=(320,240))
 #cap = cv2.VideoCapture(0)
 
 for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port=True):
@@ -20,26 +27,27 @@ for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port
     # read image
     # ret, img = cap.read()
     img = frame.array
-    cv2.imshow("Original Image",img)
+    # cv2.imshow("Original Image",img)
     raw_capture.truncate(0)
 
     # if not ret:
       # print("cap.read no worky")
       # continue
-
     # get hand data from the rectangle sub window on the screen
-    cv2.rectangle(img, (300,300), (100,100), (0,255,0),0)
-    crop_img = img[100:300, 100:300]
+    cv2.rectangle(img, start_rect, end_rect, (0,255,0),0)
+    crop_img = img[end_rectx:start_rectx, end_recty:start_recty]
 
     # convert to grayscale
     grey = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY)
+    # cv2.imshow("gray",grey)
 
     # applying gaussian blur
-    value = (35, 35)
+    value = (25, 25)
     blurred = cv2.GaussianBlur(grey, value, 0)
+    # cv2.imshow("blur",blurred)
 
     # thresholdin: Otsu's Binarization method
-    _, thresh1 = cv2.threshold(blurred, 127, 255,
+    _, thresh1 = cv2.threshold(blurred, 100, 255,
                                cv2.THRESH_BINARY_INV+cv2.THRESH_OTSU)
 
     # show thresholded image
@@ -108,17 +116,16 @@ for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port
 
     # define actions required
     if count_defects == 1:
-        cv2.putText(img,"This means that we could detect 1 finger", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
+        cv2.putText(img,"1 finger", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
     elif count_defects == 2:
-        str = "This means that we could detect 2 fingers"
+        str = "2 fingers"
         cv2.putText(img, str, (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
     elif count_defects == 3:
-        cv2.putText(img,"This means that we could detect 3 fingers", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
+        cv2.putText(img,"3 fingers", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
     elif count_defects == 4:
-        cv2.putText(img,"This means that we could detect 4 fingers", (50, 50), cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
+        cv2.putText(img,"4 fingers", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
     else:
-        cv2.putText(img,"This means an entire hand", (50, 50),\
-                    cv2.FONT_HERSHEY_SIMPLEX, 2, 2)
+        cv2.putText(img,"Entire hand", (5, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, 2)
 
     # show appropriate images in windows
     cv2.imshow('Gesture', img)
