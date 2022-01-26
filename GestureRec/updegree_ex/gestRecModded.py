@@ -1,13 +1,31 @@
-
+from picamera.array import PiRGBArray
+from picamera import PiCamera
 import cv2
 import numpy as np
 import math
 
+# picamera setup
+camera = PiCamera()
+camera.resolution = (320, 240)
+camera.framerate = 30
+camera.brightness = 65
 
-cap = cv2.VideoCapture(0)
-while(cap.isOpened()):
+
+raw_capture = PiRGBArray(camera, size=(320,240))
+#cap = cv2.VideoCapture(0)
+
+for frame in camera.capture_continuous(raw_capture, format='bgr', use_video_port=True):
+
+# while(cap.isOpened()):
     # read image
-    ret, img = cap.read()
+    # ret, img = cap.read()
+    img = frame.array
+    cv2.imshow("Original Image",img)
+    raw_capture.truncate(0)
+
+    # if not ret:
+      # print("cap.read no worky")
+      # continue
 
     # get hand data from the rectangle sub window on the screen
     cv2.rectangle(img, (300,300), (100,100), (0,255,0),0)
@@ -107,6 +125,7 @@ while(cap.isOpened()):
     all_img = np.hstack((drawing, crop_img))
     cv2.imshow('Contours', all_img)
 
-    k = cv2.waitKey(10)
-    if k == 27:
+    #k = cv2.waitKey(10)
+    #if k == 27:
+    if cv2.waitKey(1) & 0xFF==ord('q'):
         break
