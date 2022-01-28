@@ -7,7 +7,7 @@ drawingModule = mp.solutions.drawing_utils
 handsModule = mp.solutions.hands
 
 # Use Cv2 funtionality to create a Video stream and add some values
-cap = cv2.VideoCapture(0)
+cap = cv2.VideoCapture(1)
 fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 
 # Add confidence values

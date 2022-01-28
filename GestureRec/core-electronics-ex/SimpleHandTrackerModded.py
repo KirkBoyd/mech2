@@ -17,7 +17,7 @@ handsModule = mp.solutions.hands
 
 # Use Cv2 funtionality to create a Video stream and add some values
 #cap = cv2.VideoCapture(0, format=(string)NV12)
-#fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
+fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v')
 
 # Add confidence values
 # image
@@ -30,11 +30,11 @@ with handsModule.Hands(static_image_mode=False, min_detection_confidence=0.7, mi
 		img = frame.array
 		cv2.imshow("Original Image", img)
 		raw_capture_truncate(0)
-		ret, frame = cap.read()
+		#ret, frame = cap.read()
 		# Uncomment below if camera is flipped
 		# flipped = cv2.flip(frame, (640, 480))
 		#Det
-		frame1 = cv2.resize(frame, (640, 480))
+		frame1 = cv2.resize(img, (320, 240))
 		# Prod
 		results = hands.process(cv2.cvtColor(frame1, cv2.COLOR_BGR2RGB))
 
@@ -43,7 +43,7 @@ with handsModule.Hands(static_image_mode=False, min_detection_confidence=0.7, mi
 			for handLandmarks in results.multi_hand_landmarks:
 				drawingModule.draw_landmarks(frame1, handLandmarks, handsModule.HAND_CONNECTIONS)
 
-		#cv2.imshow("Frame", frame1);
+		cv2.imshow("Frame", frame1);
 		key = cv2.waitKey(1) & 0xFF
 
 		if key == ord("q"):
