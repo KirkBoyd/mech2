@@ -6,6 +6,12 @@
 
 int spdL = 100;
 int spdR = 100;
+
+int avg;
+const int avgNum = 32;
+int vals[avgNum];
+int sum = 0;
+int i=0;
 bool mLfwd = true;
 bool mRfwd = true;
 
@@ -21,6 +27,23 @@ void setup() {
 }
 
 void loop() {
-  Serial.println(analogRead(sharp));
-  mvMotors(mLfwd,mRfwd,spdL,spdR);
+  //Serial.println(analogRead(sharp));
+  //mvMotors(mLfwd,mRfwd,spdL,spdR);
+  vals[i] = analogRead(sharp);
+//  Serial.print("i: ");
+//  Serial.print(i);
+//  Serial.print(" | Raw: ");
+//  Serial.print(vals[i]);
+  for (int j=0;j<avgNum;j++){
+    sum = sum + vals[j];
+//    Serial.print(" | Sum: ");
+//    Serial.print(sum);
+  }
+  avg = sum/avgNum;
+  sum = 0;
+  Serial.print(" | Avg: ");
+  Serial.println(avg);
+  
+  i++;
+  if(i%avgNum==0){i=0;}
 }
