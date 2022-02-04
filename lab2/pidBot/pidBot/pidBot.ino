@@ -4,16 +4,26 @@
 #define M2 7 //right motor fwd/rev
 #define sharp A2 //sharp sensor
 
-int spdL = 100;
-int spdR = 100;
+/* MOTOR */
+int maxSpd = 255;
+int minSpd = 100;
+int spdL = maxSpd;
+int spdR = spdL;
+bool mLfwd = !true;
+bool mRfwd = !true;
+int motorScaled;
 
+/* FILTER */
 int avg;
-const int avgNum = 32;
+const int avgNum = 16;
 int vals[avgNum];
 int sum = 0;
 int i=0;
-bool mLfwd = true;
-bool mRfwd = true;
+
+/* PID */
+int maxDist = 620;
+int desiredDist = 350;
+int deltaX = 0;
 
 void setup() {
   // put your setup code here, to run once:
@@ -27,23 +37,44 @@ void setup() {
 }
 
 void loop() {
-  //Serial.println(analogRead(sharp));
-  //mvMotors(mLfwd,mRfwd,spdL,spdR);
+  
+  
+
+  /* FILTER */
   vals[i] = analogRead(sharp);
+  for (int j=0;j<avgNum;j++){ sum = sum + vals[j]; }
+  avg = sum/avgNum;  sum = 0;
+  Serial.print(" | Avg: ");  Serial.print(avg);
+  i++; if(i%avgNum==0){i=0;}
+
+  /* PID */
+  deltaX = (desiredDist - avg);
+//  mvMotors(-spdL,-spdR);
+  Serial.print(" | deltaX: ");  Serial.print(deltaX);
+//  if(deltaX > 0){ mLfwd = true; mRfwd = true; }
+//  else{ mLfwd = false; mRfwd = false; }
+  if (deltaX >=0) {
+    motorScaled = map(deltaX, 0, 350, 100, 255);
+  }
+  else {
+    motorScaled = map(deltaX, -280, 0, -255, -100);
+  }
+//  motorScaled = map(deltaX, -280, 350, -255, 255);
+  mvMotors(-motorScaled, -motorScaled);
+  Serial.print(" | Both Motor Speeds: ");
+  Serial.println(motorScaled); 
+}
+
+/* DEBUG */
+//mvMotors(mLfwd,mRfwd,spdL,spdR);
+//Serial.println(analogRead(sharp));
 //  Serial.print("i: ");
 //  Serial.print(i);
 //  Serial.print(" | Raw: ");
 //  Serial.print(vals[i]);
-  for (int j=0;j<avgNum;j++){
-    sum = sum + vals[j];
 //    Serial.print(" | Sum: ");
 //    Serial.print(sum);
-  }
-  avg = sum/avgNum;
-  sum = 0;
-  Serial.print(" | Avg: ");
-  Serial.println(avg);
-  
-  i++;
-  if(i%avgNum==0){i=0;}
-}
+//  digitalWrite(M1, mLfwd);
+//  digitalWrite(M2, mRfwd);
+//  analogWrite(E1, spdL);
+//  analogWrite(E2, spdR);
