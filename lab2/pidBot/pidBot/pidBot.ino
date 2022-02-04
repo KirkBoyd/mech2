@@ -14,16 +14,24 @@ bool mRfwd = !true;
 int motorScaled;
 
 /* FILTER */
-int avg;
-const int avgNum = 16;
-int vals[avgNum];
-int sum = 0;
+double avg;
+const int avgNum = 8;
+double vals[avgNum];
+double sum = 0;
 int i=0;
 
 /* PID */
 int maxDist = 620;
 int desiredDist = 350;
-int deltaX = 0;
+double deltaX = 0;
+double Kp = 1;
+double P = 0;
+double Ki = 1;
+double I = 0;
+double Kd = 1;
+double D = 0;
+double output;
+double err;
 
 void setup() {
   // put your setup code here, to run once:
@@ -37,37 +45,27 @@ void setup() {
 }
 
 void loop() {
-  
-  
-
   /* FILTER */
-  vals[i] = analogRead(sharp);
+  vals[i] = abs(max(-analogRead(sharp) + 630.0,0.0)); // force closest possible distance to 0, farthest possible to 630
   for (int j=0;j<avgNum;j++){ sum = sum + vals[j]; }
-  avg = sum/avgNum;  sum = 0;
-  Serial.print(" | Avg: ");  Serial.print(avg);
+  avg = abs(sum/avgNum);  sum = 0;
   i++; if(i%avgNum==0){i=0;}
 
   /* PID */
-  deltaX = (desiredDist - avg);
-//  mvMotors(-spdL,-spdR);
-  Serial.print(" | deltaX: ");  Serial.print(deltaX);
-//  if(deltaX > 0){ mLfwd = true; mRfwd = true; }
-//  else{ mLfwd = false; mRfwd = false; }
-  if (deltaX >=0) {
-    motorScaled = map(deltaX, 0, 350, 100, 255);
-  }
-  else {
-    motorScaled = map(deltaX, -280, 0, -255, -100);
-  }
-//  motorScaled = map(deltaX, -280, 350, -255, 255);
-  mvMotors(-motorScaled, -motorScaled);
-  Serial.print(" | Both Motor Speeds: ");
-  Serial.println(motorScaled); 
-}
+  deltaX = (desiredDist - avg); //range from -280 to 350  
+  err = deltaX;
+  P = Kp * err;
+  output = P*Kp + I*Ki + D*Kd;
+  mvBoth(output);
 
-/* DEBUG */
-//mvMotors(mLfwd,mRfwd,spdL,spdR);
-//Serial.println(analogRead(sharp));
+  /*********/
+  /* DEBUG */
+  /*********/
+//  Serial.println(analogRead(sharp));
+//  Serial.print(" | Both Motor Speeds: ");
+  Serial.println(output); 
+//  Serial.print(" | Avg: ");  Serial.println(avg);
+//  mvMotors(mLfwd,mRfwd,spdL,spdR);
 //  Serial.print("i: ");
 //  Serial.print(i);
 //  Serial.print(" | Raw: ");
@@ -78,3 +76,16 @@ void loop() {
 //  digitalWrite(M2, mRfwd);
 //  analogWrite(E1, spdL);
 //  analogWrite(E2, spdR);
+} // END VOID LOOP
+
+/*************/
+/* GRAVEYARD */
+/*************/
+  //dXscaled = map(deltaX, -280, 350, -155, 155)
+  //want range from -155 to 155
+//  if (deltaX >=0) {
+//    //motorScaled = map(deltaX, 0, 350, 100, 255);
+//  }
+//  else {
+//    //motorScaled = map(deltaX, -280, 0, -255, -100);
+//  }
