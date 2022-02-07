@@ -14,24 +14,33 @@ bool mRfwd = !true;
 int motorScaled;
 
 /* FILTER */
-double avg;
+long avg;
 const int avgNum = 8;
-double vals[avgNum];
-double sum = 0;
+long vals[avgNum];
+long sum = 0;
 int i=0;
 
 /* PID */
 int maxDist = 620;
 int desiredDist = 350;
 double deltaX = 0;
-double Kp = 1;
+double Kp = 0.6;
 double P = 0;
-double Ki = 1;
+double Ki = 0.2;
 double I = 0;
 double Kd = 1;
 double D = 0;
 double output;
 double err;
+long currentTime = 0;
+long prevTime = 0;
+long lastAvg = 0;
+long deltaAvg = 0;
+long deltaT = 0;
+double deriv;
+double cumulErr;
+int minI = -700;
+int maxI = 700;
 
 void setup() {
   // put your setup code here, to run once:
@@ -45,26 +54,46 @@ void setup() {
 }
 
 void loop() {
+  currentTime = millis()/1000; // take clock input
   /* FILTER */
   vals[i] = abs(max(-analogRead(sharp) + 630.0,0.0)); // force closest possible distance to 0, farthest possible to 630
+//  Serial.print("Data point taken at: ");
+//  Serial.println(millis());
   for (int j=0;j<avgNum;j++){ sum = sum + vals[j]; }
   avg = abs(sum/avgNum);  sum = 0;
   i++; if(i%avgNum==0){i=0;}
+  deltaAvg = avg - lastAvg;
+  deltaT = currentTime - prevTime;
+  deriv = deltaAvg / deltaT;
+
+  
 
   /* PID */
   deltaX = (desiredDist - avg); //range from -280 to 350  
   err = deltaX;
+  cumulErr = cumulErr + err*deltaT;
+  cumulErr = constrain(cumulErr, minI, maxI);
   P = Kp * err;
-  output = P*Kp + I*Ki + D*Kd;
+  I = Ki * cumulErr;
+  D = Kd * deriv;
+  output = P + I + D;
   mvBoth(output);
-
+  prevTime = currentTime; // store time from beginning of loop to compare
+  lastAvg = avg;
   /*********/
   /* DEBUG */
   /*********/
 //  Serial.println(analogRead(sharp));
 //  Serial.print(" | Both Motor Speeds: ");
-  Serial.println(output); 
-//  Serial.print(" | Avg: ");  Serial.println(avg);
+//  Serial.println(output); 
+//  Serial.print("avg,");  
+  Serial.print(avg);
+  Serial.print("\t");  
+  Serial.print(P);
+  Serial.print("\t");  
+  Serial.print(I);
+  Serial.print("\t");  
+  Serial.print(D);
 //  mvMotors(mLfwd,mRfwd,spdL,spdR);
 //  Serial.print("i: ");
 //  Serial.print(i);

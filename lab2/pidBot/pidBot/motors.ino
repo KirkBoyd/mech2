@@ -22,8 +22,8 @@ void mvBoth(double spd){ //pass negative values of speed to reverse motor direct
   else{ 
     spd = constrain(map(spd, 0, 255, 135, 255),0,255);
   } // scrunch values to valid motor range
-  Serial.print(" | spd: ");
-  Serial.print(spd);
+  Serial.print("\t");
+  Serial.println(spd);
   // actually send to motors
   if(spd>=0){dir=true;}
   else{dir=false;}
