@@ -12,7 +12,7 @@ void mvMotors(int speedL, int speedR){ //pass negative values of speed to revers
   analogWrite(E2, abs(speedR));
 }
 
-void mvBoth(double spd){ //pass negative values of speed to reverse motor direction
+void mvBoth(int spd){ //pass negative values of speed to reverse motor direction
   bool dir;
 
   // bring out immobile range
@@ -22,8 +22,7 @@ void mvBoth(double spd){ //pass negative values of speed to reverse motor direct
   else{ 
     spd = constrain(map(spd, 0, 255, 135, 255),0,255);
   } // scrunch values to valid motor range
-  Serial.print("\t");
-  Serial.println(spd);
+  Serial.print(spd); Serial.print("\t");
   // actually send to motors
   if(spd>=0){dir=true;}
   else{dir=false;}

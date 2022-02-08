@@ -14,29 +14,28 @@ bool mRfwd = !true;
 int motorScaled;
 
 /* FILTER */
-long avg;
-const int avgNum = 8;
-long vals[avgNum];
-long sum = 0;
+int raw;
+double avg;
+const int avgNum = 4;
+double vals[avgNum];
+double sum = 0;
 int i=0;
 
 /* PID */
-int maxDist = 620;
-int desiredDist = 350;
-double deltaX = 0;
-double Kp = 0.6;
+double desiredDist = 10.0;
+double Kp = 25;
 double P = 0;
-double Ki = 0.2;
+double Ki = 0;
 double I = 0;
-double Kd = 1;
+double Kd = 0;
 double D = 0;
 double output;
 double err;
-long currentTime = 0;
-long prevTime = 0;
-long lastAvg = 0;
-long deltaAvg = 0;
-long deltaT = 0;
+unsigned long currentTime = 0;
+unsigned long prevTime = 0;
+double lastAvg = 0;
+double deltaAvg = 0;
+double deltaT = 0;
 double deriv;
 double cumulErr;
 int minI = -700;
@@ -50,61 +49,50 @@ void setup() {
   digitalWrite(M1,LOW);  
   digitalWrite(M2,LOW);
   pinMode(sharp, INPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {
-  currentTime = millis()/1000; // take clock input
   /* FILTER */
-  vals[i] = abs(max(-analogRead(sharp) + 630.0,0.0)); // force closest possible distance to 0, farthest possible to 630
-//  Serial.print("Data point taken at: ");
-//  Serial.println(millis());
-  for (int j=0;j<avgNum;j++){ sum = sum + vals[j]; }
-  avg = abs(sum/avgNum);  sum = 0;
-  i++; if(i%avgNum==0){i=0;}
-  deltaAvg = avg - lastAvg;
-  deltaT = currentTime - prevTime;
-  deriv = deltaAvg / deltaT;
-
-  
+  raw = analogRead(sharp);
+  vals[i] = sharp_calib(raw);
+  for (int j=0; j<avgNum; j++) {
+    sum = sum + vals[j];
+  }
+  avg = sum/double(avgNum);
+  sum = 0;
+  i++;
+  if (i%avgNum == 0) {
+    i=0;
+  }
 
   /* PID */
-  deltaX = (desiredDist - avg); //range from -280 to 350  
-  err = deltaX;
+  err = (desiredDist - avg);
+
   cumulErr = cumulErr + err*deltaT;
   cumulErr = constrain(cumulErr, minI, maxI);
+
+  deltaAvg = avg - lastAvg;
+  currentTime = millis();
+  deltaT = double(currentTime-prevTime)/1000.0;
+  prevTime = currentTime;
+  deriv = deltaAvg / deltaT;
+
   P = Kp * err;
   I = Ki * cumulErr;
   D = Kd * deriv;
   output = P + I + D;
-  mvBoth(output);
+  mvBoth(int(output));
   prevTime = currentTime; // store time from beginning of loop to compare
   lastAvg = avg;
-  /*********/
-  /* DEBUG */
-  /*********/
-//  Serial.println(analogRead(sharp));
-//  Serial.print(" | Both Motor Speeds: ");
-//  Serial.println(output); 
-//  Serial.print("avg,");  
-  Serial.print(avg);
-  Serial.print("\t");  
-  Serial.print(P);
-  Serial.print("\t");  
-  Serial.print(I);
-  Serial.print("\t");  
-  Serial.print(D);
-//  mvMotors(mLfwd,mRfwd,spdL,spdR);
-//  Serial.print("i: ");
-//  Serial.print(i);
-//  Serial.print(" | Raw: ");
-//  Serial.print(vals[i]);
-//    Serial.print(" | Sum: ");
-//    Serial.print(sum);
-//  digitalWrite(M1, mLfwd);
-//  digitalWrite(M2, mRfwd);
-//  analogWrite(E1, spdL);
-//  analogWrite(E2, spdR);
+  delay(1);
+
+  Serial.print(P);Serial.print('\t');
+  Serial.print(I);Serial.print('\t');
+  Serial.print(D);Serial.print('\t');
+  Serial.print(avg);Serial.print('\t');
+  Serial.print(desiredDist);Serial.print('\t');
+  Serial.println();
 } // END VOID LOOP
 
 /*************/
@@ -118,3 +106,21 @@ void loop() {
 //  else {
 //    //motorScaled = map(deltaX, -280, 0, -255, -100);
 //  }
+
+
+/********************/
+/* HELPER FUNCTIONS */
+/********************/
+
+// Calibration function mapping the analog input to a distance in inches.
+// Params:
+//  raw - (int) direct reading from analogRead() of sharp sensor
+// Returns:
+//  (double) estimated distance in inches
+double sharp_calib(int raw) {
+  // obtained these constants by collecting data and using scipy's curve_fit()
+  static const double CALIB_A = 2.37092463e+03;
+  static const double CALIB_B = -1.39181488e+00;
+
+  return CALIB_A/double(raw) + CALIB_B;
+}
