@@ -23,18 +23,18 @@ int i=0;
 
 /* PID */
 double desiredDist = 10.0;
-double Kp = 25;
+double Kp = 20;
 double P = 0;
-double Ki = 0;
+double Ki = 5;
 double I = 0;
-double Kd = 0;
+double Kd = 20;
 double D = 0;
 double output;
 double err;
 unsigned long currentTime = 0;
 unsigned long prevTime = 0;
-double lastAvg = 0;
-double deltaAvg = 0;
+double lastErr = 0;
+double deltaErr = 0;
 double deltaT = 0;
 double deriv;
 double cumulErr;
@@ -66,17 +66,18 @@ void loop() {
     i=0;
   }
 
+  currentTime = millis();
+  deltaT = double(currentTime-prevTime);
+  prevTime = currentTime;
+
   /* PID */
   err = (desiredDist - avg);
 
-  cumulErr = cumulErr + err*deltaT;
+  cumulErr = cumulErr + (err*deltaT)/1000.0;
   cumulErr = constrain(cumulErr, minI, maxI);
 
-  deltaAvg = avg - lastAvg;
-  currentTime = millis();
-  deltaT = double(currentTime-prevTime)/1000.0;
-  prevTime = currentTime;
-  deriv = deltaAvg / deltaT;
+  deltaErr = err - lastErr;
+  deriv = (deltaErr/deltaT)/1000.0;
 
   P = Kp * err;
   I = Ki * cumulErr;
@@ -84,14 +85,13 @@ void loop() {
   output = P + I + D;
   mvBoth(int(output));
   prevTime = currentTime; // store time from beginning of loop to compare
-  lastAvg = avg;
-  delay(1);
+  lastErr = err;
+  // delay(3);
 
   Serial.print(P);Serial.print('\t');
   Serial.print(I);Serial.print('\t');
   Serial.print(D);Serial.print('\t');
   Serial.print(avg);Serial.print('\t');
-  Serial.print(desiredDist);Serial.print('\t');
   Serial.println();
 } // END VOID LOOP
 
